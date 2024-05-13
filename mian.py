@@ -1,5 +1,6 @@
 import base64
 import requests
+from mimetypes import guess_type
 
 # get openai_api_key
 # ---- config approach
@@ -14,11 +15,25 @@ def encode_image(image_path):
   with open(image_path, "rb") as image_file:
     return base64.b64encode(image_file.read()).decode('utf-8')
 
+# Function to encode a local image into data URL 
+def local_image_to_data_url(image_path):
+    # Guess the MIME type of the image based on the file extension
+    mime_type, _ = guess_type(image_path)
+    if mime_type is None:
+        mime_type = 'application/octet-stream'  # Default MIME type if none is found
+
+    # Read and encode the image file
+    with open(image_path, "rb") as image_file:
+        base64_encoded_data = base64.b64encode(image_file.read()).decode('utf-8')
+
+    # Construct the data URL
+    return f"data:{mime_type};base64,{base64_encoded_data}"
+
 # Path to your image
 image_path = "images/dummy-receipt1.png"
 
-# Getting the base64 string
-base64_image = encode_image(image_path)
+# Getting the data path
+data_url = local_image_to_data_url(image_path)
 
 headers = {
   "Content-Type": "application/json",
@@ -38,7 +53,7 @@ payload = {
         {
           "type": "image_url",
           "image_url": {
-            "url": f"data:image/jpeg;base64,{base64_image}"
+            "url": data_url
           }
         }
       ]
