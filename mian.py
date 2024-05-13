@@ -58,8 +58,14 @@ payload = {
       ]
     }
   ],
-  "max_tokens": 300
+  "max_tokens": 300 # Remember to set a "max_tokens" value, or the return output will be cut off.
 }
+
+# add RESOURCE_NAME and DEPLOYMENT_NAME into config
+# post_url = f"https://{RESOURCE_NAME}.openai.azure.com/openai/deployments/{DEPLOYMENT_NAME}/extensions/chat/completions?api-version=2023-12-01-preview"
+# RESOURCE_NAME is the name of your Azure OpenAI resource
+# DEPLOYMENT_NAME is the name of your GPT-4 Turbo with Vision model deployment
+
 
 response = requests.post("https://api.openai.com/v1/chat/completions", headers=headers, json=payload)
 
