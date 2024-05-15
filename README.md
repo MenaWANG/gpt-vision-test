@@ -7,8 +7,8 @@ Document recognition, also known as document analysis or document understanding,
 
 ## 🚀 How to Use
 You'll need to 
-* have the necessary dependencies installed (pls see `requirements_py311.txt`). Here is [a quick demo on creating virtual environment](https://github.com/MenaWANG/venv_test).  
-* create an openai api key for the project and save it in your environment. More info on [{dotenv} for secrete management](https://pypi.org/project/python-dotenv/).  
+* have the necessary dependencies installed (pls see `requirements_py311.txt`).  [Link](https://github.com/MenaWANG/venv_test) to a quick demo of python virtual environment.  
+* create an openai api key or relevant Azure resources for the project and save it in your environment. [More info](https://pypi.org/project/python-dotenv/) on {dotenv}📦 for secrete management.  
 
 ## 📚 Reference:
 * [Quick start with vision](https://platform.openai.com/docs/guides/vision) 
