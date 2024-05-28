@@ -10,7 +10,7 @@ You'll need to
 * have the necessary dependencies installed (pls see `requirements_py311.txt`).  [Link](https://github.com/MenaWANG/venv_test) to a quick demo of python virtual environment.  
 * Save the below credentials in your `.env` file and ensure `.env` is in your `.gitignore`. [More info](https://pypi.org/project/python-dotenv/) on {dotenv}📦 for secrete management.  
     * Azure Resources:
-        * `AZURE_ENDPOINT` & `AZURE_API_KEY`: Go to Azure AI Studio, deploy a GPT-vision model, go to playground and click `code`, find `curl` and get URL from there. It will look something like f"https://{RESOURCE_NAME}.openai.azure.com/openai/deployments/{DEPLOYMENT_NAME}/extensions/chat/completions?api-version=2023-12-01-preview"
+        * `AZURE_ENDPOINT` & `AZURE_API_KEY`: Go to Azure AI Studio, deploy a GPT-vision model, go to playground and click `code`, find `curl` and get URL from there. It will look something like `f"https://{RESOURCE_NAME}.openai.azure.com/openai/deployments/{DEPLOYMENT_NAME}/extensions/chat/completions?api-version=2023-12-01-preview"`
     * OpenAI Resources:
         * `OPENAI_API_KEY`: https://platform.openai.com/api-keys 
 
